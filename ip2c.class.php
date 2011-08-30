@@ -1,6 +1,6 @@
 <?php
 /*
- *      ip2c.php
+ *      ip2c.class.php
  *
  *      Copyright 2011 Wouter Snels <info@ofloo.net>
  *
@@ -33,11 +33,6 @@
     public function locate ($ip = null) {
       $url = "http://be1.ip2c.info/csv/" . $ip;
       if ($meta = get_headers ($url, 1)) {
-        if (isset ($meta['Content-Length'])) {
-          $bytes = $meta['Content-Length'];
-        } else {
-          $bytes = 1024;
-        }
         if (isset ($meta['Location'])) {
           $url = $meta['Location'];
         }
@@ -52,7 +47,7 @@
             $this->_COUNTRY[$i],
             $this->_REGISTRY[$i],
             $this->_ASSIGNED[$i]
-          ) = fgetcsv ($http, $bytes, ',', '"');
+          ) = fgetcsv ($http, 1024, ',', '"');
           $i++;
         }
         fclose ($http);
