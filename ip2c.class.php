@@ -31,7 +31,7 @@
 
     // locate ip input ip returns true or false
     public function locate ($ip = null) {
-      $url = "http://be1.ip2c.info/csv/" . $ip;
+      $url = "http://api.ip2c.info/csv/" . $ip;
       if ($meta = get_headers ($url, 1)) {
         if (isset ($meta['Location'])) {
           $url = $meta['Location'];
