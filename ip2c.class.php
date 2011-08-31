@@ -38,10 +38,13 @@
             $url = $meta['Location'];
             continue;
           }
-        }
-        if (isset ($meta['Content-Length'])) {
-          $bytes = $meta['Content-Length'];
-          break;
+          if (isset ($meta['Content-Length'])) {
+            $bytes = $meta['Content-Length'];
+            break;
+          } else {
+            $bytes = 1024;
+            break;
+          }
         } else {
           $bytes = 1024;
           break;
