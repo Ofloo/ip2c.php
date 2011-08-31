@@ -32,9 +32,19 @@
     // locate ip input ip returns true or false
     public function locate ($ip = null) {
       $url = "http://api.ip2c.info/csv/" . $ip;
-      if ($meta = get_headers ($url, 1)) {
-        if (isset ($meta['Location'])) {
-          $url = $meta['Location'];
+      while (1) {
+        if ($meta = get_headers ($url, 1)) {
+          if (isset ($meta['Location'])) {
+            $url = $meta['Location'];
+            continue;
+          }
+        }
+        if (isset ($meta['Content-Length'])) {
+          $bytes = $meta['Content-Length'];
+          break;
+        } else {
+          $bytes = 1024;
+          break;
         }
       }
       if ($http = fopen ($url, "r")) {
@@ -47,7 +57,7 @@
             $this->_COUNTRY[$i],
             $this->_REGISTRY[$i],
             $this->_ASSIGNED[$i]
-          ) = fgetcsv ($http, 1024, ',', '"');
+          ) = fgetcsv ($http, $bytes, ',', '"');
           $i++;
         }
         fclose ($http);
