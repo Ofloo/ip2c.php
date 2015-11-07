@@ -19,7 +19,7 @@
    * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
    * MA 02110-1301, USA.
    *
-   * SVN: https://narf.ofloo.net/svn/ip2c.php/
+   * GIT: https://github.com/Ofloo/ip2c.php
    *
    */
 

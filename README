@@ -1,3 +1,8 @@
-If you don't know how to use php classes check out example.php, otherwise I don't know what to say, .. 
+Usage information
+-----------------
+Basicly what this lib does is look up the location of an IP from ip2c.info.
+Check example.php for more information. Pretty much self explanatory.
 
-Basicly what this lib does is look up the location of an IP from ip2c.info
+Donations
+---------
+Bitcoin: 1wqZdYXE7hdU4BTFV9vrUiBUD9LdEdQAj
