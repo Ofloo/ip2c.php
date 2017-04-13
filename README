@@ -3,6 +3,28 @@ Usage information
 Basicly what this lib does is look up the location of an IP from ip2c.info.
 Check example.php for more information. Pretty much self explanatory.
 
+// locate ip input ip returns true or false when it failed looking up the ip.
+// when ip is null it will lookup the IP it used to connect to the API
+bool locate ([mixed ip][, bool secure])
+
+// returns type array ip wich was looked up
+array address (void)
+
+// returns type array 2 char abbreveration
+array abbr_short (void)
+
+// returns type array 3 char abbreveration
+array abbr_long (void)
+
+// returns type array full country name
+array country (void)
+
+// returns type array registry where the ip was allocated
+array registry (void)
+
+// returns type array when the ip was allocated
+array assigned (void)
+
 Donations
 ---------
 Bitcoin: 1wqZdYXE7hdU4BTFV9vrUiBUD9LdEdQAj
