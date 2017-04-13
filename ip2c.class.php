@@ -33,6 +33,8 @@
    *
    *  GIT: https://github.com/Ofloo/ip2c.php
    *
+   *  version 1.1
+   *
    */
 
   class ip2c {
